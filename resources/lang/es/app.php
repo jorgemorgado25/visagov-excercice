@@ -21,7 +21,7 @@
         'contact.field.message'                  => 'Mensaje',
         'contact.placeholder.email'              => 'Escriba su email',
         'contact.placeholder.message'            => 'Escriba su mensaje',
-        'contact.button.send'                    => 'Enviar mensage',
+        'contact.button.send'                    => 'Enviar mensaje',
 
         'language.title'                         => 'Idioma'
     ];
