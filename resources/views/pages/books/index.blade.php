@@ -2,9 +2,10 @@
 @section('content')
     <div class="container">
 
-        @include('pages.partials.feedback-message')
         <h2>{{ __('app.books.title') }}</h2>
 
+        @include('pages.books.feedback-messages')
+        
         <a class="btn btn-primary mb-4" href="{{ route('books.create') }}">
             {{ __('app.books.button.create') }}
         </a>

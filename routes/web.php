@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Books\BooksController;
 use App\Http\Controllers\Contact\ContactController;
-use App\Http\Controllers\Home\HomeController;
 
 Route::group([ 'prefix' => LaravelLocalization::setLocale() ], function() {
     

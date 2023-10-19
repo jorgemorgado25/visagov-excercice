@@ -32,7 +32,7 @@ class BooksController extends Controller
         $createBookDto = new CreateBookDto($request->title, $request->author);
         try {
             $this->booksService->create($createBookDto);
-            return Redirect::route('books.index')->with('success-message', 'Book saved successful');
+            return Redirect::route('books.index')->with('books.feedback-message.created.success', '');
         } catch (\Exception $e) {
             return Redirect::route('books.index')->with('error-message', 'Error when save book');
         }
@@ -53,7 +53,7 @@ class BooksController extends Controller
         try {
             $updateBookDto = new UpdateBookDto($request->title, $request->author);
             $this->booksService->update($bookId, $updateBookDto);
-            return Redirect::route('books.index')->with('success-message', 'Book updated successful');
+            return Redirect::route('books.index')->with('books.feedback-message.updated.success', '');
         } catch (\Exception $e) {
             return Redirect::route('books.index')->with('error-message', $e->getMessage());
         }
@@ -63,7 +63,7 @@ class BooksController extends Controller
     {
         try {
             $this->booksService->delete($bookId);
-            return Redirect::route('books.index')->with('success-message', 'Book deleted successful');
+            return Redirect::route('books.index')->with('books.feedback-message.deleted.success', '');
         } catch (\Exception $e) {
             return Redirect::route('books.index')->with('error-message', $e->getMessage());
         }

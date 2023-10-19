@@ -18,14 +18,4 @@ class ContactRequest extends FormRequest
             'message' => 'required|min:10',
         ];
     }
-
-    public function messages()
-    {
-        return[
-            'email.required'   => 'Email is required',
-            'eamil.email'      => 'Email format not valid',
-            'message.required' => 'Message is required',
-            'message.min'      => 'Message should contain at least 10 charactes'
-        ];
-    }
 }
