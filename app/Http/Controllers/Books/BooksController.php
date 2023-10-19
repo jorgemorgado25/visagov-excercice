@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Books;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 
-use App\Http\Requests\StoreBookRequest;
 use App\Visagov\Services\BooksService;
+use App\Http\Requests\StoreBookRequest;
 use App\Visagov\Dtos\Books\CreateBookDto;
 use App\Visagov\Dtos\Books\UpdateBookDto;
 
@@ -29,12 +29,12 @@ class BooksController extends Controller
 
     public function store(StoreBookRequest $request)
     {
-        $createBookDto = new CreateBookDto($request->title, $request->author);
         try {
+            $createBookDto = new CreateBookDto($request->title, $request->author);
             $this->booksService->create($createBookDto);
             return Redirect::route('books.index')->with('books.feedback-message.created.success', '');
         } catch (\Exception $e) {
-            return Redirect::route('books.index')->with('error-message', 'Error when save book');
+            return Redirect::route('books.index')->with('error-message', $e->getMessage());
         }
     }
 
