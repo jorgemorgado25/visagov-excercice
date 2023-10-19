@@ -12,7 +12,12 @@ php artisan migrate
 php artisan db:seed
 ```
 
-4. List routes:
+4. If you want to list routes:
 ```
 php artisan route:list
+```
+
+5. Server project:
+```
+php artisan serve
 ```
