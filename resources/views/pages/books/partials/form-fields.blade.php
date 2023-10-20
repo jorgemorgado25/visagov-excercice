@@ -8,9 +8,9 @@
         name="title"
         placeholder="{{ __('app.books.placeholder.title') }}"
         maxlength="150"
-        value="{{ $book->title ?? '' }}"
+        value="{{ $book->title ?? old('title') }}"
         class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
-    >
+    />
     @if ($errors->has('title'))
         <div class="invalid-feedback">
             {{ $errors->first('title') }}
@@ -28,9 +28,9 @@
         name="author"
         placeholder="{{ __('app.books.placeholder.author')}}"
         maxlength="150"
-        value="{{ $book->author ?? '' }}"
+        value="{{ $book->author ?? old('author') }}"
         class="form-control {{ $errors->has('author') ? 'is-invalid' : '' }}"
-    >
+    />
     @if ($errors->has('author'))
         <div class="invalid-feedback">
             {{ $errors->first('author') }}
