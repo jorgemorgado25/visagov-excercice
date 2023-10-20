@@ -22,6 +22,7 @@
         'contact.placeholder.email'              => 'Write your email',
         'contact.placeholder.message'            => 'Write your message',
         'contact.button.send'                    => 'Send message',
+        'contact.message.sent'                   => 'Message sent',
 
         'language.title'                         => 'Language'
     ];

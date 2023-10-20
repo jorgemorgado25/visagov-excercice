@@ -1,9 +1,14 @@
 @extends('layouts.home-layout')
 @section('content')
     <div class="container">
-        @include('pages.partials.feedback-message')
 
         <h2>{{ __('app.contact.title') }}</h2>
+
+        @if ( Session::has('contact.message.sent') )
+            <div class="alert alert-info text-center">
+                {{ __('app.contact.message.sent') }}
+            </div>
+        @endif
 
         <form action="{{ route('contact.send') }}" method="POST">
             <div class="mb-3">

@@ -15,6 +15,6 @@ class ContactController extends Controller
 
     public function send(ContactRequest $request)
     {
-        return Redirect::route('contact.send')->with('success-message', 'Message sent!');
+        return Redirect::route('contact.send')->with('contact.message.sent', '');
     }
 }
