@@ -4,7 +4,7 @@
 
         <h2>{{ __('app.books.title') }}</h2>
 
-        @include('pages.books.feedback-messages')
+        @include('pages.books.partials.feedback-messages')
         
         <a class="btn btn-primary mb-4" href="{{ route('books.create') }}">
             {{ __('app.books.button.create') }}
