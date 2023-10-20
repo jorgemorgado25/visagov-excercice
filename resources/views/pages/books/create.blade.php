@@ -6,7 +6,7 @@
             action="{{ route('books.store') }}"
             method="POST"
         >
-            @include('pages.books.form-fields')
+            @include('pages.books.partials.form-fields')
             <button class="btn btn-primary">
                 {{ __('app.books.button.create')}}
             </button>
