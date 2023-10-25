@@ -15,3 +15,9 @@
         {{ __('app.books.feedback-message.created.success') }}
     </div>
 @endif
+
+@if (Session::has('error-message'))
+    <div class="alert alert-info text-center">
+        {{ Session::get('error-message') }}
+    </div>
+@endif
