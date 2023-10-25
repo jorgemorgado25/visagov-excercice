@@ -6,15 +6,16 @@ use Exception;
 use App\Models\Book;
 use App\Visagov\Dtos\Books\CreateBookDto;
 use App\Visagov\Dtos\Books\UpdateBookDto;
+use Illuminate\Database\Eloquent\Collection;
 
-Class BooksService {
+class BooksService {
 
-    public function all()
+    public function all(): Collection
     {
         return Book::orderBy('id', 'desc')->get();
     }
 
-    public function create(CreateBookDto $createBookDto)
+    public function create(CreateBookDto $createBookDto): void
     {
         Book::create([
             'title'  => $createBookDto->title(),
@@ -22,7 +23,7 @@ Class BooksService {
         ]);
     }
 
-    public function findOneById(int $bookId)
+    public function findOneById(int $bookId): Book
     {
         $book = $this->findBook($bookId);
 
@@ -33,7 +34,7 @@ Class BooksService {
         return $book;
     }
 
-    public function update(Int $bookId, UpdateBookDto $updateBookDto)
+    public function update(Int $bookId, UpdateBookDto $updateBookDto): void
     {
         $book = $this->findBook($bookId);
         
@@ -46,7 +47,7 @@ Class BooksService {
         $book->save();
     }
 
-    public function delete(Int $bookId)
+    public function delete(Int $bookId): void
     {
         $book = $this->findBook($bookId);
         
@@ -57,7 +58,7 @@ Class BooksService {
         $book->delete();
     }
 
-    private function findBook(Int $bookId)
+    private function findBook(Int $bookId): Book | null
     {
         return Book::where('id', '=', $bookId)->first();
     }
