@@ -13,12 +13,12 @@ use App\Visagov\Dtos\Books\UpdateBookDto;
 class BooksController extends Controller
 {
     public function __construct(
-        private BooksService $booksService
+        private readonly BooksService $booksService
     ){}
 
     public function index()
     {
-        $books = $this->booksService->all();        
+        $books = $this->booksService->all();
         return view('pages.books.index', compact('books'));
     }
 
